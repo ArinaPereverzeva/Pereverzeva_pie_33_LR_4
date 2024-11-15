@@ -1,0 +1,183 @@
+@font-face {
+    font-family: "Sofia Sans";
+    src: url("fonts/SofiaSans-VariableFont_wght.ttf") format('ttf');
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+}
+body {
+    font-family: "Sofia Sans";
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;       /* Центрирование по горизонтали */
+    background-color: #E0C088;
+    color: black;
+}
+header {
+    background-color: #483008;
+    color: white;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+}
+main {
+    align-items: center;
+    margin: 20px;
+}
+footer {
+    /*margin-top: auto;*/
+    padding: 15px;
+    background-color: #483008;
+    color: white;
+    text-align: center;
+    width: 100%;
+    position: relative;
+}
+#image {
+    width: 300px;
+    height: 300px;
+    margin: 20px;  /* Отступ между картинкой и текстом */
+    opacity: 0; /* Начальное состояние - невидима */
+    animation: fadeIn 2s forwards; /* Запуск анимации fadeIn */
+    text-align: center;
+    vertical-align: middle;
+}
+@keyframes fadeIn {
+    to {
+        opacity: 1;    /* Конечное состояние - полностью видно */
+    }
+}
+
+#image img {
+    width: 100%;                   /* Ширина изображения 100% от родителя */
+    height: auto;                  /* Высота будет автоматически подстраиваться */
+    max-width: 300px;              /* Ограничение на максимальную ширину изображения */
+}
+
+#question-container {
+    display: none;
+    background-color: #E0C088;
+    color: #000;
+    border-radius: 10px; /* Скругление углов */
+    padding: 20px; /* Отступы внутри контейнера */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);     /* Тень для контейнера */
+    margin: 20px 0;                                /* Отступы сверху и снизу */
+    text-align: center; /* Центрирование текста и изображений */
+    z-index: 1; /* Установка z-index, чтобы контейнер был выше фона */
+    
+}
+
+/* Стили для заголовка вопроса */
+#question {
+    font-size: 24px; /* Размер шрифта для вопроса */
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+#start-button {
+    background-color: #886828; 
+    color: white; /* Белый цвет текста */
+    padding: 15px 32px; /* Отступы внутри кнопки */
+    text-align: center; /* Выравнивание текста */
+    text-decoration: none; /* Убирает подчеркивание текста */
+    display: inline-block; /* Позволяет задать размеры кнопки */
+    font-size: 16px; /* Размер шрифта */
+    margin: 4px 2px; /* Отступы вокруг кнопки */
+    cursor: pointer; /* Указатель при наведении */
+    border: none; /* Убирает рамку */
+    border-radius: 5px; /* Скругление углов */
+    transition: background-color 0.3s; /* Плавный переход цвета фона */
+}
+
+#start-button:hover {
+    background-color: #887048; /* Цвет при наведении */
+}
+/* Стили для кнопок ответов */
+.answer-button {
+    display: inline-block;      /* Позволяет задать размеры кнопки */
+    background-color: #886828; /* Синий цвет */
+    color: black; /* Белый цвет текста */
+    padding: 10px 20px; /* Отступы внутри кнопки */
+    text-align: center; /* Выравнивание текста */
+    text-decoration: none; /* Убирает подчеркивание текста */
+    font-size: 16px; /* Размер шрифта */
+    margin: 10px 0; /* Отступы сверху и снизу */
+    cursor: pointer; /* Указатель при наведении */
+    border: none; /* Убирает рамку */
+    border-radius: 5px; /* Скругление углов */
+    transition: background-color 0.3s; /* Плавный переход цвета фона */
+    width: 100%; /* Кнопки занимают всю ширину контейнера */
+    white-space: normal; /* Разрешить перенос текста на новую строку */
+    overflow-wrap: break-word; /* Перенос слов, если они не помещаются */
+}
+.answer-button:hover {
+    background-color: #887048; /* Цвет при наведении */ 
+}
+/* Стили для элемента результата */
+#result {
+    font-size: 20px; /* Размер шрифта для результата */
+    margin-top: 20px; /* Отступ сверху */
+}
+#result-image {
+    display: none;                  /* Будет показано с помощью JavaScript */
+    width: auto;                   /* Автоматическая ширина контейнера */
+    max-width: 90%;                /* Ограничивает максимальную ширину 90% от родителя */
+    height: auto;                  /* Высота будет автоматически подстраиваться */
+    margin: 0 auto;                /* Центрирование контейнера */
+    text-align: center;            /* Центрирование содержимого внутри контейнера */
+    opacity: 0;                    /* Начальное состояние - невидимо */
+    animation: fadeIn 2s forwards; /* Запуск анимации fadeIn */
+}
+@keyframes fadeIn {
+    to {
+        opacity: 1;    /* Конечное состояние - полностью видно */
+    }
+}
+#result-image img {
+    width: 100%;                   /* Ширина изображения 100% от родителя */
+    height: auto;                  /* Высота будет автоматически подстраиваться */
+    max-width: 300px;              /* Ограничение на максимальную ширину изображения */
+}
+#retry-button {
+    background-color: #886828; 
+    color: white; /* Белый цвет текста */
+    padding: 15px 32px; /* Отступы внутри кнопки */
+    text-align: center; /* Выравнивание текста */
+    text-decoration: none; /* Убирает подчеркивание текста */
+    display: inline-block; /* Позволяет задать размеры кнопки */
+    font-size: 16px; /* Размер шрифта */
+    margin: 4px 2px; /* Отступы вокруг кнопки */
+    cursor: pointer; /* Указатель при наведении */
+    border: none; /* Убирает рамку */
+    border-radius: 5px; /* Скругление углов */
+    transition: background-color 0.3s; /* Плавный переход цвета фона */
+}
+#retry-button:hover {
+    background-color: #887048; /* Цвет при наведении */
+}
+@media (max-width: 768px) {
+    header, footer {
+        width: 93%;  /* Уменьшаем ширину заголовка и футера */
+        padding: 10px;  /* Изменяем отступы для заголовка и футера */
+        margin: auto; /* Выравниваем по центру */
+    }
+    #question-container {
+        width: 85%; /* Уменьшаем ширину контейнера вопроса */
+        padding: 15px; /* Корректируем отступы */
+        margin: 10px auto; /* Центруем блок с вопросом */
+    }
+    #question {
+        font-size: 20px; /* Уменьшаем размер шрифта для вопроса */
+        margin-bottom: 15px; /* Отступ снизу */
+    }
+    .answer-button {
+        font-size: 14px; /* Уменьшаем размер шрифта на мобильных */
+        padding: 10px 15px; /* Уменьшаем отступы под кнопкой */
+    }
+    #image, #result-image {
+        max-width: 100%; /* Ограничиваем ширину изображений */
+        height: auto; /* Сохраняем соотношение сторон */
+    }
+}
